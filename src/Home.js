@@ -7,7 +7,7 @@ function Home() {
     let [dd, Sdd] = useState([]);
     let { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
     function show() {
-        fetch("http://localhost:8000/data").then((res) => res.json()).then((data) => {
+        fetch("https://muju-ai.onrender.com/data").then((res) => res.json()).then((data) => {
             Sd(data)
 
 
@@ -29,7 +29,7 @@ function Home() {
         SpeechRecognition.stopListening();
     }
     function send() {
-        axios.post("http://localhost:8000/", { transcript })
+        axios.post("https://muju-ai.onrender.com/", { transcript })
         window.location.reload()
 
 
