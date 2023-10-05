@@ -30,7 +30,7 @@ function Home() {
     }
     function send() {
         axios.post("https://muju-ai.onrender.com/", { transcript })
-        window.location.reload()
+      //  window.location.reload()
 
 
 
