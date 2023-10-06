@@ -27,7 +27,7 @@ app.post("/", async (req, res) => {
 })
 
 
-app.get("/data", async (req, res) => {
+app.get("/data", (req, res) => {
   const url = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${r}`;
 
   const options = {
@@ -37,7 +37,7 @@ app.get("/data", async (req, res) => {
       'X-RapidAPI-Host': 'mashape-community-urban-dictionary.p.rapidapi.com'
     }
   };
-  const response = await fetch(url, options).then((res) => res.json()).then((data) => {
+  fetch(url, options).then((res) => res.json()).then((data) => {
     res.send([data])
 
   })
